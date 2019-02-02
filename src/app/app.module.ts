@@ -12,6 +12,7 @@ import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { AllIncidentsComponent } from './all-incidents/all-incidents.component';
 import { MapVisualComponent } from './map-visual/map-visual.component';
+import { IncidentFilterPipe } from './all-incidents/incident-filter.pipe';
 
 const appRoutes:Routes = [
   {
@@ -35,7 +36,8 @@ const appRoutes:Routes = [
     AppComponent,
     HomeComponent,
     AllIncidentsComponent,
-    MapVisualComponent
+    MapVisualComponent,
+    IncidentFilterPipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
