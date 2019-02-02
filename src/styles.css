@@ -1714,7 +1714,7 @@
   }
   
   .table-striped tbody tr:nth-of-type(even) {
-    background-color: rgb(222, 248, 231);
+    background-color: rgba(221, 250, 232, 0.822);
   }
   
   .table-striped tbody tr:nth-of-type(odd) {
