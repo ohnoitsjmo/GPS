@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { IncidentObject } from '../incidentobject';
-import { ETIME } from 'constants';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +17,7 @@ export class HomeComponent implements OnInit {
   incident: IncidentObject;
   studentName: string = "";
   studentID: number;
+  studentPhone: number;
   type: string = "";
   description: string = "";
   allIncidents: IncidentObject[];
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
   }
 
   insertIncident() {
-    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(2), this.lng.toFixed(2)], description:this.description}).subscribe(res => {
+    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, studentPhone: this.studentPhone, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(2), this.lng.toFixed(2)], description:this.description}).subscribe(res => {
     });
   }
 }
