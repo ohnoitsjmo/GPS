@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { IncidentObject } from '../incidentobject';
+import { ETIME } from 'constants';
 
 @Component({
   selector: 'app-home',
@@ -42,6 +43,11 @@ export class HomeComponent implements OnInit {
 
   error(err) {
     console.log('err');
+  }
+
+  markerMoved(e) {
+    this.lat = e.coords.lat;
+    this.lng = e.coords.lng;
   }
 
   insertIncident() {
