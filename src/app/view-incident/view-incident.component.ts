@@ -19,6 +19,8 @@ export class ViewIncidentComponent implements OnInit {
   constructor(public incidentService:IncidentService) { }
 
   ngOnInit() {
+      this.lat = Number(this.incidentService.incident.location[0]);
+      this.lng = Number(this.incidentService.incident.location[1]);
   }
 
 }
