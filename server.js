@@ -57,5 +57,9 @@ app.get('/queryActiveIncidents.json', function(req, res) {
   });
 })
 
+app.get('updateSingleIncident', function(req, res) {
+    db.collection('activityLogs').updateOne({"_id" : req.session._id}, {"status" : req.session.status})
+})
+
 app.listen(3000);
 console.log("Server running on port 3000");
