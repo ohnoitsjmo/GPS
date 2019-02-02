@@ -7,6 +7,7 @@ import { IncidentObject } from '../incidentobject';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   lat: number = 35.3050;
@@ -16,16 +17,18 @@ export class HomeComponent implements OnInit {
   incident: IncidentObject;
   studentName: string = "";
   studentID: number;
+  studentPhone: number;
   type: string = "";
   description: string = "";
   allIncidents: IncidentObject[];
   personUrl="../assets/images/Person.svg"
   incidentUrl="../assets/images/Exclamation.svg";
+  mapStyles = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.post('api/queryAllIncidents', {}).subscribe(res => {
+    this.http.post('api/queryActiveIncidents', {}).subscribe(res => {
       this.allIncidents = res['incidents'] as IncidentObject[];
       if (navigator.geolocation) {
         this.isTracking = true;
@@ -43,8 +46,31 @@ export class HomeComponent implements OnInit {
     console.log('err');
   }
 
+  markerMoved(e) {
+    this.lat = e.coords.lat;
+    this.lng = e.coords.lng;
+    console.log(this.lat);
+    console.log(this.lng);
+  }
+
+  togglePOI() {
+    if (this.mapStyles.length == 0) {
+      this.mapStyles = [{
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+          ]
+      }];
+    } else {
+      this.mapStyles = [];
+    }
+  }
+
   insertIncident() {
-    this.http.post('api/insertIncident', {studentName:this.studentName, studentID:this.studentID, type:this.type, time:Date(), location:[this.lat.toFixed(2), this.lng.toFixed(2)], description:this.description}).subscribe(res => {
+    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, studentPhone: this.studentPhone, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(5), this.lng.toFixed(5)], description:this.description}).subscribe(res => {
     });
   }
 }

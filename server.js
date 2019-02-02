@@ -39,27 +39,23 @@ app.post('/queryAllIncidents', function(req, res) {
   });
 })
 
+app.post('/queryActiveIncidents', function(req, res) {
+  db.collection('activityLogs').find({"status":true}).toArray(function(err, data) {
+    res.json({incidents:data});
+  });
+})
+
 app.get('/queryAllIncidents.json', function(req, res) {
   db.collection('activityLogs').find().toArray(function(err, data) {
     res.json({data});
   });
 })
 
-// app.post('/queryUser', function(req, res) {
-// });
-
-// app.post('/authenticate', function(req, res) {
-// });
-
-// app.post('/logout', function(req, res) {
-//   req.session.isAuthenticated = false;
-//   res.json({isAuthenticated :req.session.isAuthenticated, loggedInUsername :req.session.loggedInUserGivenName});
-// });
-
-// app.post('/isAuthenticated', function(req, res) {
-//   console.log(req.session);
-//   res.json({isAuthenticated: req.session.isAuthenticated});
-// })
+app.get('/queryActiveIncidents.json', function(req, res) {
+  db.collection('activityLogs').find({"status":true}).toArray(function(err, data) {
+    res.json({data});
+  });
+})
 
 app.listen(3000);
 console.log("Server running on port 3000");

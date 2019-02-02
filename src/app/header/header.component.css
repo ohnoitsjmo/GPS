@@ -5,3 +5,8 @@ embed{
 a{
    display:inline-block;
 }
+
+.white-box {
+    background-color: white;
+    color: black;
+}
