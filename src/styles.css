@@ -4669,6 +4669,8 @@
     }
     .navbar-expand-lg .navbar-nav .nav-link {
       padding-right: 0.5rem;
+      margin-inline-end: 50px;
+      margin-left: 50px;
       padding-left: 0.5rem;
     }
     .navbar-expand-lg > .container,
