@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IncidentObject } from '../incidentobject';
+import { IncidentService } from '../incident.service';
 
 @Component({
   selector: 'app-view-incident',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewIncidentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private incidentService:IncidentService) { }
+
+  incident:IncidentObject;
 
   ngOnInit() {
+      this.incident = this.incidentService.incident;
   }
 
 }
