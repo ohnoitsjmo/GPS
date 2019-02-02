@@ -13,6 +13,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { AllIncidentsComponent } from './all-incidents/all-incidents.component';
 import { MapVisualComponent } from './map-visual/map-visual.component';
 import { IncidentFilterPipe } from './all-incidents/incident-filter.pipe';
+import { ConsoleComponent } from './console/console.component';
 
 const appRoutes:Routes = [
   {
@@ -37,7 +38,8 @@ const appRoutes:Routes = [
     HomeComponent,
     AllIncidentsComponent,
     MapVisualComponent,
-    IncidentFilterPipe
+    IncidentFilterPipe,
+    ConsoleComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
