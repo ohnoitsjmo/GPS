@@ -1,5 +1,9 @@
-<h1>All Incidents</h1>
 <div class="margin">
+
+<div class="h1-padding">
+<h1>All Incidents</h1>
+</div>
+
 <div class="container-fluid text-center">
 
   <table class="table table-striped" [mfData]="allIncidents" #mf="mfDataTable" [mfRowsOnPage]="10">
@@ -25,9 +29,7 @@
           <td>{{ incident.time }}</td>
           <td>{{ incident.location }}</td>
           <td>{{ incident.description }}</td>
-          <div class="more">
-            <td><a (click) = "incidentService.incidentView(incident)"><button type="button" class="btn btn-primary">More</button></a></td>
-          </div>
+          <td><a (click) = "incidentService.incidentView(incident)"><button type="button" class="btn btn-primary">More</button></a></td>
         </tr>
       </ng-container>
     </tbody>
