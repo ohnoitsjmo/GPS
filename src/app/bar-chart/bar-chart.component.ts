@@ -27,7 +27,7 @@ export class BarChartComponent implements OnInit {
 
   ngOnInit() {
     for (var i = 0; i < 24; i++) {
-      this.barChartLabels.push(i.toString());
+      this.barChartLabels.push(i.toString() + ":00");
     }
     this.http.post('api/queryActiveIncidents', {}).subscribe(res => {
       this.allIncidents = res['incidents'] as IncidentObject[];
