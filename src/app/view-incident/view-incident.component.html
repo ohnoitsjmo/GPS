@@ -8,7 +8,7 @@
           <b>Description:</b>
       </div>
       <div class="incident-description">
-        {{incident.description}}
+        {{incidentService.incident.description}}
       </div>
     </td>
     <td class="list-group-item">
@@ -16,7 +16,7 @@
           <b>Type:</b> 
       </div>
       <div class="incident-description">
-        {{incident.type}}
+        {{incidentService.incident.type}}
       </div>
     </td>
     <td class="list-group-item">
@@ -24,7 +24,7 @@
           <b>Time:</b> 
       </div>
       <div class="incident-description">
-          {{incident.time}}
+          {{incidentService.incident.time}}
       </div>
     </td>
     <td class="list-group-item">
@@ -32,12 +32,14 @@
           <b>Location:</b> 
       </div>
       <div class="incident-description">
-          {{incident.location}}
+          {{incidentService.incident.location}}
       </div>
     </td>
   </ul>
   </tr>
-  <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+  <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
 </div>
 <div class="container">
     <h3>Comments</h3>

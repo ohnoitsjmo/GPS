@@ -12,17 +12,12 @@ import { AgmCoreModule } from '@agm/core';
   styleUrls: ['./view-incident.component.css']
 })
 export class ViewIncidentComponent implements OnInit {
+  lat: number = 35.3050;
+  lng: number = -120.6625;
 
   constructor(private incidentService:IncidentService) { }
 
-  incident:IncidentObject;
-  lat: number;// = 35.3050;
-  lng: number;// = -120.6625;
-
   ngOnInit() {
-      this.incident = this.incidentService.incident;
-      this.lat = this.incident.location[0];
-      this.lng = this.incident.location[1];
   }
 
 }
