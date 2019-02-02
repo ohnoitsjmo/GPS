@@ -5696,7 +5696,7 @@ a.badge-dark:hover, a.badge-dark:focus {
 .list-group-item {
   position: relative;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 20% 80%;
   width: 75rem;
   padding: 0;
   background-color: #02B875;
