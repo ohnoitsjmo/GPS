@@ -1,0 +1,12 @@
+.home-container {
+    text-align:center;
+}
+
+#map {
+    z-index:-1;
+    height: 100vh;
+}
+
+agm-map {
+    height: 100%;
+}
