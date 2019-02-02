@@ -24,6 +24,7 @@
           <td>{{ incident.time }}</td>
           <td>{{ incident.location }}</td>
           <td>{{ incident.description }}</td>
+          <td><a (click) = "incidentService.incidentView(incident)"><button type="button" class="btn btn-primary">More</button></a></td>
         </tr>
       </ng-container>
     </tbody>
