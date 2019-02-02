@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   allIncidents: IncidentObject[];
   personUrl="../assets/images/Person.svg"
   incidentUrl="../assets/images/Exclamation.svg";
+  mapStyles = [];
 
   constructor(private http: HttpClient) { }
 
@@ -48,10 +49,28 @@ export class HomeComponent implements OnInit {
   markerMoved(e) {
     this.lat = e.coords.lat;
     this.lng = e.coords.lng;
+    console.log(this.lat);
+    console.log(this.lng);
+  }
+
+  togglePOI() {
+    if (this.mapStyles.length == 0) {
+      this.mapStyles = [{
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+          ]
+      }];
+    } else {
+      this.mapStyles = [];
+    }
   }
 
   insertIncident() {
-    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, studentPhone: this.studentPhone, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(2), this.lng.toFixed(2)], description:this.description}).subscribe(res => {
+    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, studentPhone: this.studentPhone, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(5), this.lng.toFixed(5)], description:this.description}).subscribe(res => {
     });
   }
 }
