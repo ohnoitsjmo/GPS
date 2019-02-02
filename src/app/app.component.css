@@ -1,0 +1,18 @@
+app-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color:skyblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+app-header {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index:99;
+    color:skyblue;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,3 +1,40 @@
-<p>
-  home works!
-</p>
+<div class="home-container">
+  <!-- this creates a google map on the page with the given lat/lng from -->
+  <!-- the component as the initial center of the map: -->
+  <div id="map">
+      <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
+          <agm-marker [markerDraggable]="true" [iconUrl]="personUrl" [latitude]="lat" [longitude]="lng">
+              <agm-snazzy-info-window [maxHeight]="600" [maxWidth]="600" [closeWhenOthersOpen]="true" [closeOnMapClick]="true" [backgroundColor]="red" [showCloseButton]="true" [fontColor]="blue" [placement]="right" [pointer]="true">
+                  <ng-template>
+                      <div>
+                          <label class = "center-label">Full Name:</label>
+                          <input [(ngModel)]="studentName" type="text" class="form-control" placeholder="Enter name">
+                      </div>
+                      <div>
+                          <label class = "center-label">Student ID:</label>
+                          <input [(ngModel)]="studentID" type="text" class="form-control" placeholder="Enter ID">
+                      </div>
+                      <div>
+                          <label class = "center-label">Crime Type</label>
+                          <input [(ngModel)]="type" type="text" class="form-control" placeholder="Enter type">
+                      </div>
+                      <div>
+                          <label class = "center-label">Description:</label>
+                          <input [(ngModel)]="description" type="text" class="form-control" placeholder="Enter description">
+                      </div>
+                      <br><button (click)="insertIncident()"><i class="fas fa-exclamation-triangle"></i>Report Incident</button>
+                  </ng-template>
+              </agm-snazzy-info-window>
+          </agm-marker>
+          <agm-marker [latitude]="incident.location[0]" [longitude]="incident.location[1]" [iconUrl]="incidentUrl" *ngFor="let incident of allIncidents">
+              <agm-snazzy-info-window  [maxWidth]="200" [closeWhenOthersOpen]="true" [closeOnMapClick]="true" [backgroundColor]="red" [showCloseButton]="true" [fontColor]="blue" [placement]="right" [pointer]="true">
+                  <ng-template>
+                      <p>
+                          {{ incident.description }}
+                      </p>
+                  </ng-template>
+              </agm-snazzy-info-window>
+          </agm-marker>
+      </agm-map>
+  </div>
+</div>
