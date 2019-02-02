@@ -44,3 +44,7 @@ td {
     background-color: #ffffff;
     left: 5px;
 }
+
+.container {
+    width: 100%;
+}
