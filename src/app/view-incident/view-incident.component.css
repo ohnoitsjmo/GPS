@@ -551,6 +551,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  padding-top:150px;
 }
 
 @media (min-width: 576px) {
@@ -5664,6 +5665,12 @@ a.badge-dark:hover, a.badge-dark:focus {
   margin-bottom: 0;
 }
 
+.incident-description {
+  color: black;
+  display: inline;
+
+}
+
 .list-group-item-action {
   width: 100%;
   color: #495057;
@@ -5683,11 +5690,20 @@ a.badge-dark:hover, a.badge-dark:focus {
 
 .list-group-item {
   position: relative;
-  display: block;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: -1px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 500px;
+  padding: 0;
   background-color: #02B875;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.incident-description {
+  background: white;
+  padding: 5px;
+}
+
+.incident-title {
+  padding: 5px;
 }
 
 .list-group-item:first-child {
