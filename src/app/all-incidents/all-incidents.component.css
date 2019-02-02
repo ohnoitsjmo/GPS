@@ -1,3 +1,7 @@
 .margin{
     margin-top: 90px;
 }
+
+.container {
+    width: 100%;
+}
