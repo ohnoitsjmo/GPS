@@ -15,6 +15,8 @@ import { MapVisualComponent } from './map-visual/map-visual.component';
 import { IncidentFilterPipe } from './all-incidents/incident-filter.pipe';
 import { ConsoleComponent } from './console/console.component';
 import { ViewIncidentComponent } from './view-incident/view-incident.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { ChartsModule } from 'ng2-charts';
 
 const appRoutes:Routes = [
   {
@@ -36,6 +38,10 @@ const appRoutes:Routes = [
   {
       path: 'view/:id',
       component: ViewIncidentComponent
+  },
+  {
+    path: 'bar_chart',
+    component: BarChartComponent
   }
 ]
 
@@ -49,7 +55,8 @@ const appRoutes:Routes = [
     MapVisualComponent,
     IncidentFilterPipe,
     ConsoleComponent,
-    ViewIncidentComponent
+    ViewIncidentComponent,
+    BarChartComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -60,7 +67,8 @@ const appRoutes:Routes = [
     AgmSnazzyInfoWindowModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBkxgq_lARNwLFmykPNIef6TaSEDp6OarY'
-    })
+    }),
+    ChartsModule,
   ],
   entryComponents : [
   ],

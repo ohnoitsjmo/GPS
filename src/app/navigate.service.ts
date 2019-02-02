@@ -20,4 +20,8 @@ export class NavigateService {
   navigateMap() {
     this.router.navigate(['map_visual']);
   }
+
+  navigateBar() {
+    this.router.navigate(['bar_chart']);
+  }
 }
