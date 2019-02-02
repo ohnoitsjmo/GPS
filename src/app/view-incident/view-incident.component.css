@@ -3940,7 +3940,7 @@ input[type="button"].btn-block {
   content: "";
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 50% 50%;
+  background-size: 20% 80%;
 }
 
 .custom-checkbox .custom-control-label::before {
@@ -5696,8 +5696,8 @@ a.badge-dark:hover, a.badge-dark:focus {
 .list-group-item {
   position: relative;
   display: grid;
-  grid-template-columns: 50% 50%;
-  width: 75rem;
+  grid-template-columns: 20% 80%;
+  width: 76rem;
   padding: 0;
   background-color: #02B875;
 }

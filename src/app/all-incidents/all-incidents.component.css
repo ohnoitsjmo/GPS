@@ -31,8 +31,6 @@ button:focus {
 th {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-
-
   }
 
 thead {
@@ -42,4 +40,10 @@ thead {
 
 .container {
     width: 100%;
+}
+
+td {
+    padding: 7px;
+    vertical-align: center;
+    height: 25%;
 }
