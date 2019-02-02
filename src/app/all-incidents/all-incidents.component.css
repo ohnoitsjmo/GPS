@@ -1,6 +1,7 @@
-/* .margin{
-    margin-top: 90px;
-} */
+.margin{
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
 h1{
     padding-left: 20px;
@@ -34,16 +35,16 @@ th {
   }
 
 
-tr:nth-child(even) {background-color: #f1bbbb;}
+/* tr:nth-child(even) {background-color: #f1bbbb;} */
 
-td {
+/* td {
     background-color: #ffffff
-}
-
+} */
+/* 
 .more {
     background-color: #ffffff;
     left: 5px;
-}
+} */
 
 .container {
     width: 100%;
