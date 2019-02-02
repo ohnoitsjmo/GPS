@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IncidentObject } from '../incidentobject';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-incidents',
@@ -15,12 +16,15 @@ export class AllIncidentsComponent implements OnInit {
   location:string="";
   description:string="";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router:Router) { }
 
   ngOnInit() {
      this.http.post('api/queryAllIncidents', {}).subscribe(res=> {
        this.allIncidents = res['incidents'] as IncidentObject[];
        console.log(this.allIncidents);
      })
+  }
+  incidentView(incident:IncidentObject){
+    this.router.navigate(['view/' + incident._id]);
   }
 }

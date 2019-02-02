@@ -14,6 +14,7 @@ import { AllIncidentsComponent } from './all-incidents/all-incidents.component';
 import { MapVisualComponent } from './map-visual/map-visual.component';
 import { IncidentFilterPipe } from './all-incidents/incident-filter.pipe';
 import { ConsoleComponent } from './console/console.component';
+import { ViewIncidentComponent } from './view-incident/view-incident.component';
 
 const appRoutes:Routes = [
   {
@@ -27,6 +28,14 @@ const appRoutes:Routes = [
   {
     path: 'all_incidents',
     component: AllIncidentsComponent
+  },
+  {
+      path: 'console',
+      component: ConsoleComponent
+  },
+  {
+      path: 'view/:id',
+      component: ViewIncidentComponent
   }
 ]
 
@@ -39,7 +48,8 @@ const appRoutes:Routes = [
     AllIncidentsComponent,
     MapVisualComponent,
     IncidentFilterPipe,
-    ConsoleComponent
+    ConsoleComponent,
+    ViewIncidentComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
