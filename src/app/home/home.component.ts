@@ -7,6 +7,7 @@ import { IncidentObject } from '../incidentobject';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   lat: number = 35.3050;
