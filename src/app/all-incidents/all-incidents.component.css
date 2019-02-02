@@ -3,6 +3,10 @@
     margin-right: 50px;
 }
 
+.h1-padding{
+    margin-left: 20px;
+}
+
 h1{
     padding-top: 150px;
 }
@@ -16,8 +20,7 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    bottom: 0px;
-    left: 0
+    right: 0px;
   }
 
 button:hover,
@@ -25,26 +28,12 @@ button:focus {
     background: #098b02;
 }
 
-/* tr:nth-child(even) {background-color: #f2f2f2;} */
-
 th {
     background-color: #02B875;
     color: white;
     
   }
-
-
-/* tr:nth-child(even) {background-color: #f1bbbb;} */
-
-/* td {
-    background-color: #ffffff
-} */
-/* 
-.more {
-    background-color: #ffffff;
-    left: 5px;
-} */
-
+  
 .container {
     width: 100%;
 }
