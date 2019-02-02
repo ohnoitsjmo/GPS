@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { IncidentObject } from '../incidentobject';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
