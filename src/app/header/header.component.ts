@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
+import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {NavigateService} from '../navigate.service';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router:Router, private http:HttpClient) { }
+  constructor(private router:Router, private http:HttpClient, public navigate:NavigateService) { }
 
   ngOnInit() {
   }
 
-  navigateHome() {
-    this.router.navigate(['']);
-  }
 }
