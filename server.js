@@ -45,6 +45,10 @@ app.post('/queryActiveIncidents', function(req, res) {
   });
 })
 
+app.post('/setIncidentStatusFalse', function(req, res) {
+  db.collection.update({_id: req._id}, { $set: { "status": false } });
+})
+
 app.get('/queryAllIncidents.json', function(req, res) {
   db.collection('activityLogs').find().toArray(function(err, data) {
     res.json({data});
