@@ -57,21 +57,5 @@ app.get('/queryActiveIncidents.json', function(req, res) {
   });
 })
 
-// app.post('/queryUser', function(req, res) {
-// });
-
-// app.post('/authenticate', function(req, res) {
-// });
-
-// app.post('/logout', function(req, res) {
-//   req.session.isAuthenticated = false;
-//   res.json({isAuthenticated :req.session.isAuthenticated, loggedInUsername :req.session.loggedInUserGivenName});
-// });
-
-// app.post('/isAuthenticated', function(req, res) {
-//   console.log(req.session);
-//   res.json({isAuthenticated: req.session.isAuthenticated});
-// })
-
 app.listen(3000);
 console.log("Server running on port 3000");
