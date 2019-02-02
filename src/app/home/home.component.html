@@ -30,6 +30,12 @@
               <agm-snazzy-info-window  [maxWidth]="200" [closeWhenOthersOpen]="true" [closeOnMapClick]="true" [backgroundColor]="red" [showCloseButton]="true" [fontColor]="blue" [placement]="right" [pointer]="true">
                   <ng-template>
                       <p>
+                          {{ incident.type }}
+                      </p>
+                      <p>
+                          {{ incident.time }}    
+                      </p>
+                      <p>
                           {{ incident.description }}
                       </p>
                   </ng-template>
