@@ -2,12 +2,40 @@
   <!-- Content here -->
   <h1>Incident Information</h1>
   <tr class="table-success">
-    <ul class="list-group">
-        <td class="list-group-item"><b>Description:</b> {{incident.description}}</td>
-        <td class="list-group-item"><b>Type:</b> {{incident.type}}</td>
-        <td class="list-group-item"><b>Time:</b> {{incident.time}}</td>
-        <td class="list-group-item"><b>Location:</b> {{incident.location}}</td>
-    </ul>
+  <ul class="list-group">
+    <td class="list-group-item">
+      <div class="incident-title">
+          <b>Description:</b>
+      </div>
+      <div class="incident-description">
+        {{incident.description}}
+      </div>
+    </td>
+    <td class="list-group-item">
+      <div class="incident-title">
+          <b>Type:</b> 
+      </div>
+      <div class="incident-description">
+        {{incident.type}}
+      </div>
+    </td>
+    <td class="list-group-item">
+      <div class="incident-title">
+          <b>Time:</b> 
+      </div>
+      <div class="incident-description">
+          {{incident.time}}
+      </div>
+    </td>
+    <td class="list-group-item">
+      <div class="incident-title">
+          <b>Location:</b> 
+      </div>
+      <div class="incident-description">
+          {{incident.location}}
+      </div>
+    </td>
+  </ul>
   </tr>
   <agm-map [latitude]="incident.location[0]" [longitude]="incident.location[1]"></agm-map>
 </div>

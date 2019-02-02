@@ -1,42 +1,43 @@
-<div class="container">
-  <h1>All Incidents</h1>
-  <div class="margin">
-  <div class="container-fluid text-center">
+<h1>All Incidents</h1>
+<div class="margin">
+<div class="container-fluid text-center">
 
-    <table class="table table-striped" [mfData]="allIncidents" #mf="mfDataTable" [mfRowsOnPage]="10">
-      <thead>
-        <tr>
-          <th scope="col-md-4">Type</th>
-          <th scope="col-md-1">Time</th>
-          <th scope="col-md-5">Location</th>
-          <th scope="col-md-2">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input #filter1 name ="filter1" type="text" [(ngModel)] = 'type'></td>
-          <td><input #filter2 name ="filter2" type="text" [(ngModel)] = 'time'></td>
-          <td><input #filter3 name ="filter4" type="text" [(ngModel)] = 'location'></td>
-          <td><input #filter4 name ="filter4" type="text" [(ngModel)] = 'description'></td>
-        </tr>
-        <ng-container>
-          <tr *ngFor = "let incident of mf.data | incidentFilter: type: time: location: description;">
-            <td>{{ incident.type }}</td>
-            <td>{{ incident.time }}</td>
-            <td>{{ incident.location }}</td>
-            <td>{{ incident.description }}</td>
+  <table class="table table-striped" [mfData]="allIncidents" #mf="mfDataTable" [mfRowsOnPage]="10">
+    <thead>
+      <tr>
+        <th scope="col-md-2">Type</th>
+        <th scope="col-md-2">Time</th>
+        <th scope="col-md-2">Location</th>
+        <th scope="col-md-2">Description</th>
+        <th scope="col-md-2">Police Access</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input #filter1 name ="filter1" type="text" [(ngModel)] = 'type'></td>
+        <td><input #filter2 name ="filter2" type="text" [(ngModel)] = 'time'></td>
+        <td><input #filter3 name ="filter4" type="text" [(ngModel)] = 'location'></td>
+        <td><input #filter4 name ="filter4" type="text" [(ngModel)] = 'description'></td>        
+      </tr>
+      <ng-container>
+        <tr *ngFor = "let incident of mf.data | incidentFilter: type: time: location: description;">
+          <td>{{ incident.type }}</td>
+          <td>{{ incident.time }}</td>
+          <td>{{ incident.location }}</td>
+          <td>{{ incident.description }}</td>
+          <div class="more">
             <td><a (click) = "incidentService.incidentView(incident)"><button type="button" class="btn btn-primary">More</button></a></td>
-          </tr>
-        </ng-container>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="4">
-            <mfBootstrapPaginator [rowsOnPageSet]="[10,25,50,100]"></mfBootstrapPaginator>
-          </td>
+          </div>
         </tr>
-      </tfoot>
-    </table>
-  </div>
-  </div>
+      </ng-container>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+          <mfBootstrapPaginator [rowsOnPageSet]="[10,25,50,100]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
 </div>
