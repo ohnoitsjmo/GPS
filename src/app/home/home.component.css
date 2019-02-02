@@ -15,3 +15,21 @@ button {
 agm-map {
     height: 100%;
 }
+
+button {
+    background-color: rgb(82, 180, 123);
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    bottom: 0px;
+    left: 0
+  }
+
+button:hover,
+button:focus {
+    background: #098b02;
+}
