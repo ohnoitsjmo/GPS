@@ -2,7 +2,8 @@
   <!-- this creates a google map on the page with the given lat/lng from -->
   <!-- the component as the initial center of the map: -->
   <div id="map">
-      <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
+      <button (click)="togglePOI()">Toggle POI</button>
+      <agm-map [styles]="mapStyles" [zoom]="16" [latitude]="lat" [longitude]="lng">
           <agm-marker (dragEnd)="markerMoved($event)" [markerDraggable]="true" [iconUrl]="personUrl" [latitude]="lat" [longitude]="lng">
               <agm-snazzy-info-window [maxHeight]="600" [maxWidth]="600" [closeWhenOthersOpen]="true" [closeOnMapClick]="true" [backgroundColor]="red" [showCloseButton]="true" [fontColor]="blue" [placement]="right" [pointer]="true">
                   <ng-template>
