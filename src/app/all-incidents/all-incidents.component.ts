@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IncidentObject } from '../incidentobject';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-all-incidents',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllIncidentsComponent implements OnInit {
 
-  constructor() { }
+  allIncidents:IncidentObject[];
+  type:string="";
+  time:string="";
+  location:string="";
+  description:string="";
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+     this.http.post('api/queryAllIncidents', {}).subscribe(res=> {
+       this.allIncidents = res['incidents'] as IncidentObject[];
+       console.log(this.allIncidents);
+     })
   }
-
 }
