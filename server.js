@@ -39,6 +39,12 @@ app.post('/queryAllIncidents', function(req, res) {
   });
 })
 
+app.post('/queryActiveIncidents', function(req, res) {
+  db.collection('activityLogs').find({"status":true}).toArray(function(err, data) {
+    res.json({incidents:data});
+  });
+})
+
 app.get('/queryAllIncidents.json', function(req, res) {
   db.collection('activityLogs').find().toArray(function(err, data) {
     res.json({data});

@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.post('api/queryAllIncidents', {}).subscribe(res => {
+    this.http.post('api/queryActiveIncidents', {}).subscribe(res => {
       this.allIncidents = res['incidents'] as IncidentObject[];
       if (navigator.geolocation) {
         this.isTracking = true;
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   insertIncident() {
-    this.http.post('api/insertIncident', {studentName:this.studentName, studentID:this.studentID, type:this.type, time:Date(), location:[this.lat.toFixed(2), this.lng.toFixed(2)], description:this.description}).subscribe(res => {
+    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, type:this.type, time:Date(), location:[this.lat.toFixed(2), this.lng.toFixed(2)], description:this.description}).subscribe(res => {
     });
   }
 }
