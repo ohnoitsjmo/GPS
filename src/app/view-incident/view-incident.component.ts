@@ -23,7 +23,7 @@ export class ViewIncidentComponent implements OnInit {
   ngOnInit() {
     this.lat = Number(this.incidentService.incident.location[0]);
     this.lng = Number(this.incidentService.incident.location[1]);
-    this.http.post('api/queryComments', {_id: this.incidentService.incident._id}).subscribe(res => {
+    this.http.post('api/queryComments', this.incidentService.incident).subscribe(res => {
       this.incidentService.incident.comments = res['comments'];
     })
   }
@@ -34,11 +34,11 @@ export class ViewIncidentComponent implements OnInit {
     } else {
       this.incidentService.incident.comments.push(this.comment);
     }
-    this.http.post('api/insertComment', {comments: this.incidentService.incident.comments}).subscribe(res => {});
+    this.http.post('api/insertComment', this.incidentService.incident).subscribe(res => {});
   }
 
   setIncidentStatusFalse() {
-    this.http.post('api/setIncidentStatusFalse', {_id: this.incidentService.incident._id}).subscribe(res =>{});
+    this.http.post('api/setIncidentStatusFalse', this.incidentService.incident).subscribe(res =>{});
     this.incidentService.incident.status = false;
   }
 }

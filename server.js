@@ -54,15 +54,17 @@ app.post('/insertComment', function(req, res) {
   db.collection('activityLogs').updateOne({
     _id: ObjectId(req.body._id)}, 
     { $set: 
-      {comments : req.body.comments} 
+      {"comments": req.body.comments} 
   });
 });
 
 app.post('/queryComments', function(req, res) {
-  db.collection('activityLogs').findOne({_id: ObjectId(req.body._id)}, function(err, data) {
-    res.json({comments:data.comments});
+  db.collection('activityLogs').findOne({
+    _id: ObjectId(req.body._id)}, 
+    function(err, data) {
+      res.json({comments:data.comments});
+    });
   });
-});
 
 app.get('/queryAllIncidents.json', function(req, res) {
   db.collection('activityLogs').find().toArray(function(err, data) {
