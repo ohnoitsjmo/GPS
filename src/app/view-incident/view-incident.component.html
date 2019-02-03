@@ -51,14 +51,26 @@
     <agm-marker [iconUrl]="incidentUrl" [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
   </table>
+  
+<br>
   <button (click)="setIncidentStatusFalse()">Set status inactive</button>
+  <br>
+  <br>
+   <div class="comment-box">
+  <h1>Comments:</h1>
   <div class="comments">
+
       <tr *ngFor = "let comment of incidentService.incident.comments;">
         {{ comment }}
       </tr>
   </div>
-  <div class="container">
+  <br>
+  <div class="container2">
     <textarea [(ngModel)]="comment" class="form-control" rows="3" id="comment"></textarea>
     <button (click)="insertComment()">Comment</button>
   </div>
 <div class="col-2"></div>
+<br>
+</div>
+<br>
+<br>
