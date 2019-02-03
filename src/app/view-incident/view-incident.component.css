@@ -54,6 +54,26 @@ agm-map {
           box-sizing: border-box;
 }
 
+
+button {
+  background-color: #02B875;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  bottom: 0px;
+  left: 0
+}
+
+button:hover,
+button:focus {
+  background: #098b02;
+}
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -556,8 +576,22 @@ pre code {
   padding-left: 15px;
   margin-right: 50px;
   margin-left: 50px;
-  padding-top:150px;
+  padding-top: 150px;
 }
+
+.container2 {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 0px;
+  margin-right: 50px;
+  margin-left: 0px;
+  padding-top: 0px;
+}
+
+.comment-box {
+  margin-left: 0px;
+}
+
 
 @media (min-width: 576px) {
   .container {
@@ -615,6 +649,10 @@ pre code {
 .banana {
   display: grid;
   grid-template-columns: 2fr 4fr 4fr 2fr;
+}
+
+.container {
+  margin-left: 400px;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
