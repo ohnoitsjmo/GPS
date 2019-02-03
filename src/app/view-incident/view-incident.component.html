@@ -1,5 +1,57 @@
-<div class="container">
+
+  <div class="container">
+  <table class="table banana">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <tbody>
+        <tr>
+          <th scope="row">Description:</th>
+          <td>{{incidentService.incident.description}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Type:</th>
+          <td>{{incidentService.incident.type}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Time:</th>
+          <td>{{incidentService.incident.time}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Location:</th>
+            <td>{{incidentService.incident.location}}</td>
+          </tr>
+        </tbody>
+      </div>
+  <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+  </table>
+  <div class="container">
+    <h3>Comments</h3>
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+  </div>
+<div class="col-2"></div>
+  
+  <!-- <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <h1>Incident Information</h1>
+      <p>hflkhaldkjfa;lskdjf;laskdjf;lkasjdf;lkasjdf;lkasjdf</p>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+      </div>
+      <div class="col-3">
+          <h1>Maps</h1>
+
+      </div>
+    </div> -->
   <!-- Content here -->
+  <!-- <div class="row">
+    <div class="col-4">
   <h1>Incident Information</h1>
   <tr class="table-success">
   <ul class="list-group">
@@ -36,12 +88,4 @@
       </div>
     </td>
   </ul>
-  </tr>
-  <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
-</div>
-<div class="container">
-    <h3>Comments</h3>
-    <textarea class="form-control" rows="5" id="comment"></textarea>
-</div>
+  </tr> -->
