@@ -5697,7 +5697,7 @@ a.badge-dark:hover, a.badge-dark:focus {
   position: relative;
   display: grid;
   grid-template-columns: 20% 80%;
-  width: 75rem;
+  width: 76rem;
   padding: 0;
   background-color: #02B875;
 }
