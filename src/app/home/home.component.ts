@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
 
   insertIncident() {
     this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, studentPhone: this.studentPhone, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(5), this.lng.toFixed(5)], description:this.description, comments: this.comments}).subscribe(res => {
-      location.reload();
+       location.reload();
     });
   }
 }

@@ -47,7 +47,7 @@ app.post('/queryActiveIncidents', function(req, res) {
 })
 
 app.post('/setIncidentStatusFalse', function(req, res) {
-  db.collection.update({_id: ObjectId(req.body._id)}, { $set: { status: false } });
+  db.collection('activityLogs').updateOne({_id: ObjectId(req.body._id)}, { $set: { status: false } });
 })
 
 app.post('/insertComment', function(req, res) {

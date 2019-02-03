@@ -5,20 +5,29 @@
     <div class="col-8">
       <tbody>
         <tr>
-              <th scope="row">Status:</th>
-              <td>{{incidentService.incident.Status}}</td>
+          <th scope="row">Status:</th>
+          <div *ngIf="incidentService.incident.status; else inactive">
+            <td>
+              active
+            </td>
+          </div>
+          <ng-template #inactive>
+            <td>
+              inactive
+            </td>
+          </ng-template>
         </tr>
         <tr>
-              <th scope="row">Student Name:</th>
-              <td>{{incidentService.incident.StudentName}}</td>
+          <th scope="row">Student Name:</th>
+          <td>{{incidentService.incident.studentName}}</td>
         </tr>
         <tr>
-              <th scope="row">Student ID:</th>
-              <td>{{incidentService.incident.StudentID}}</td>
+          <th scope="row">Student ID:</th>
+          <td>{{incidentService.incident.studentID}}</td>
         </tr>
         <tr>
-              <th scope="row">Student Phone:</th>
-              <td>{{incidentService.incident.StudentPhone}}</td>
+          <th scope="row">Student Phone:</th>
+          <td>{{incidentService.incident.studentPhone}}</td>
         </tr>
         <tr>
           <th scope="row">Type:</th>
