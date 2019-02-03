@@ -31,6 +31,7 @@ button:focus {
 th {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+    font-size: 20px;
   }
 
 thead {
@@ -46,3 +47,9 @@ td {
     padding: 7px;
     vertical-align: center;
 }
+/* 
+input {
+    border: 1px solid rgb(53, 53, 53);
+    width: 80%;
+    height: 100%;
+} */
