@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var path = require('path');
 var MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectID;
 var db;
 
 MongoClient.connect("mongodb://localhost:27017/PolySafe", { useNewUrlParser: true }, function(err, database) {
@@ -46,8 +47,22 @@ app.post('/queryActiveIncidents', function(req, res) {
 })
 
 app.post('/setIncidentStatusFalse', function(req, res) {
-  db.collection.update({_id: req._id}, { $set: { "status": false } });
+  db.collection.update({_id: ObjectId(req.body._id)}, { $set: { status: false } });
 })
+
+app.post('/insertComment', function(req, res) {
+  db.collection('activityLogs').updateOne({
+    _id: ObjectId(req.body._id)}, 
+    { $set: 
+      {comments : req.body.comments} 
+  });
+});
+
+app.post('/queryComments', function(req, res) {
+  db.collection('activityLogs').findOne({_id: ObjectId(req.body._id)}, function(err, data) {
+    res.json({comments:data.comments});
+  });
+});
 
 app.get('/queryAllIncidents.json', function(req, res) {
   db.collection('activityLogs').find().toArray(function(err, data) {
@@ -59,10 +74,6 @@ app.get('/queryActiveIncidents.json', function(req, res) {
   db.collection('activityLogs').find({"status":true}).toArray(function(err, data) {
     res.json({data});
   });
-})
-
-app.get('updateSingleIncident', function(req, res) {
-    db.collection('activityLogs').updateOne({"_id" : req.session._id}, {"status" : req.session.status})
 })
 
 app.listen(3000);

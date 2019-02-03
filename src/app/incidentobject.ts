@@ -8,7 +8,7 @@ export class IncidentObject {
     time:string;
     location:[number, number];
     description:string;
-    comments: string[];
+    comments: string[] = [];
 
     constructor(_id:string, status: boolean, studentName:string, studentID: number, studentPhone:number, type:string, time:string, location:[number,number], description:string, comments:string[]) {
         this._id = _id;

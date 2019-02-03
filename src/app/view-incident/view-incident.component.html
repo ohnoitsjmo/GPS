@@ -23,11 +23,17 @@
         </tbody>
       </div>
   <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-marker [iconUrl]="incidentUrl" [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
   </table>
+  <button (click)="setIncidentStatusFalse()">Set status inactive</button>
+  <div class="comments">
+      <tr *ngFor = "let comment of incidentService.incident.comments;">
+        {{ comment }}
+      </tr>
+  </div>
   <div class="container">
-    <h3>Comments</h3>
-    <textarea class="form-control" rows="5" id="comment"></textarea>
+    <textarea [(ngModel)]="comment" class="form-control" rows="3" id="comment"></textarea>
+    <button (click)="insertComment()">Comment</button>
   </div>
 <div class="col-2"></div>

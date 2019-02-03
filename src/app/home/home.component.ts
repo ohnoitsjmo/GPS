@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   studentPhone: number;
   type: string = "";
   description: string = "";
+  comments: string[] = [];
   allIncidents: IncidentObject[];
   personUrl="../assets/images/Person.svg"
   incidentUrl="../assets/images/Exclamation.svg";
@@ -70,7 +71,7 @@ export class HomeComponent implements OnInit {
   }
 
   insertIncident() {
-    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, studentPhone: this.studentPhone, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(5), this.lng.toFixed(5)], description:this.description}).subscribe(res => {
+    this.http.post('api/insertIncident', {status: true, studentName:this.studentName, studentID:this.studentID, studentPhone: this.studentPhone, type:this.type, time:new Date().toLocaleTimeString(), location:[this.lat.toFixed(5), this.lng.toFixed(5)], description:this.description, comments: this.comments}).subscribe(res => {
       location.reload();
     });
   }
