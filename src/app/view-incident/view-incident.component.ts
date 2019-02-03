@@ -39,6 +39,7 @@ export class ViewIncidentComponent implements OnInit {
 
   setIncidentStatusFalse() {
     this.http.post('api/setIncidentStatusFalse', {_id: this.incidentService.incident._id}).subscribe(res =>{});
+    this.incidentService.incident.status = false;
   }
 }
 
