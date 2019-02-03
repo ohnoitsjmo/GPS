@@ -42,7 +42,7 @@
     <agm-marker [iconUrl]="incidentUrl" [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
   </table>
-  
+
 <br>
   <button (click)="setIncidentStatusFalse()">Set status inactive</button>
   <br>
@@ -51,9 +51,10 @@
   <h1>Comments:</h1>
   <div class="comments">
 
-      <tr *ngFor = "let comment of incidentService.incident.comments;">
+      <div *ngFor = "let comment of incidentService.incident.comments;" class="alert alert-success" role="alert">
         {{ comment }}
-      </tr>
+      </div>
+
   </div>
   <br>
   <div class="container2">
