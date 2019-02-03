@@ -5,8 +5,20 @@
     <div class="col-8">
       <tbody>
         <tr>
-          <th scope="row">Description:</th>
-          <td>{{incidentService.incident.description}}</td>
+              <th scope="row">Status:</th>
+              <td>{{incidentService.incident.Status}}</td>
+        </tr>
+        <tr>
+              <th scope="row">Student Name:</th>
+              <td>{{incidentService.incident.StudentName}}</td>
+        </tr>
+        <tr>
+              <th scope="row">Student ID:</th>
+              <td>{{incidentService.incident.StudentID}}</td>
+        </tr>
+        <tr>
+              <th scope="row">Student Phone:</th>
+              <td>{{incidentService.incident.StudentPhone}}</td>
         </tr>
         <tr>
           <th scope="row">Type:</th>
@@ -19,7 +31,11 @@
         <tr>
             <th scope="row">Location:</th>
             <td>{{incidentService.incident.location}}</td>
-          </tr>
+        </tr>
+        <tr>
+              <th scope="row">Description:</th>
+              <td>{{incidentService.incident.description}}</td>
+        </tr>
         </tbody>
       </div>
   <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
