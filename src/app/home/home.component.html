@@ -7,7 +7,7 @@
       
       <agm-map [styles]="mapStyles" [zoom]="16" [latitude]="lat" [longitude]="lng">
           <agm-marker (dragEnd)="markerMoved($event)" [markerDraggable]="true" [iconUrl]="personUrl" [latitude]="lat" [longitude]="lng">
-              <agm-snazzy-info-window [maxHeight]="600" [maxWidth]="600" [closeWhenOthersOpen]="true" [closeOnMapClick]="true" [backgroundColor]="red" [showCloseButton]="true" [fontColor]="blue" [placement]="right" [pointer]="true">
+              <agm-snazzy-info-window [maxHeight]="300" [maxWidth]="1000" [closeWhenOthersOpen]="true" [closeOnMapClick]="true" [backgroundColor]="red" [showCloseButton]="true" [fontColor]="blue" [placement]="left" [pointer]="true">
                   <ng-template>
                       <div>
                           <label class = "center-label">Full Name:</label>
