@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "sudo ng serve --port 4200 --host 0.0.0.0 --disableHostCheck true --proxy-config proxy.conf.json",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -15,8 +16,10 @@
     "@agm/snazzy-info-window": "^1.0.0-beta.5",
     "@angular/animations": "^7.0.3",
     "@angular/cdk": "^7.0.4",
+    "@angular/cli": "^9.1.0",
     "@angular/common": "^7.0.3",
     "@angular/compiler": "^7.0.3",
+    "@angular/compiler-cli": "^7.2.16",
     "@angular/core": "^7.0.3",
     "@angular/forms": "^7.0.3",
     "@angular/http": "^7.0.3",
@@ -34,6 +37,7 @@
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
     "docx-pdf": "0.0.1",
+    "express": "^4.17.1",
     "express-session": "^1.15.6",
     "material-design-icons": "^3.0.1",
     "mongodb": "^3.1.13",
@@ -42,22 +46,25 @@
     "ng2-charts": "^1.6.0",
     "ngx-spinner": "^6.1.2",
     "nodemon": "^1.18.6",
+    "path": "^0.12.7",
     "replace-ext": "^1.0.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
     "snazzy-info-window": "^1.1.1",
     "soap": "^0.25.0",
+    "typescript": "~3.1.6",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.10.5",
-    "@angular/cli": "~7.0.5",
-    "@angular/compiler-cli": "^7.0.3",
+    "@angular/cli": "^9.1.0",
+    "@angular/compiler-cli": "^7.2.16",
     "@angular/language-service": "^7.0.3",
     "@types/jasmine": "^2.8.11",
     "@types/jasminewd2": "^2.0.6",
     "@types/node": "~10.12.7",
     "codelyzer": "~4.5.0",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^3.1.1",
@@ -69,5 +76,9 @@
     "ts-node": "~7.0.1",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
+  },
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.4.1"
   }
 }
